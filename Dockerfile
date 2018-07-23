@@ -1,5 +1,3 @@
-touch Dockerfile
-
 FROM node:10.7.0
 
 WORKDIR /usr/src/app
