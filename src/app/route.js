@@ -49,6 +49,11 @@ module.exports = (app, passport) => {
 		
 			res.redirect('/');
 		}
+		app.get('/map', (req,res) => {
+			res.render('map', {
+				user:req.user
+			});
+		});
 	
 };
 
