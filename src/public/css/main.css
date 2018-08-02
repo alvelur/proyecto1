@@ -14,3 +14,8 @@
     background: -webkit-linear-gradient(to right, #92005a, #280026);  
     background: linear-gradient(to right, #690092ab, #270028); 
   }
+  .profile {
+    background: #00281c4f; 
+    background: -webkit-linear-gradient(to right, #160092, #0b0028);  
+    background: linear-gradient(to right, #200092ab, #000128); 
+  }

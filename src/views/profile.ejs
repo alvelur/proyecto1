@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8">|
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 
     <title>Profile Page</title>
-    <script type="text/javascript"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">    
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script type="text/javascript">
 
         function sendPosition() {
@@ -24,6 +25,7 @@
             alert("Debe tener todos los campos llenos");
           }
         }
+
         function getPosition() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -38,42 +40,57 @@
         }
       </script>
   </head>
-  
-  <body>
+
+
+
+
+  <body class="profile">
+     
     <div class="container">
       <header class="text-center">
-        <h1>Pagina de la app</h1>
-        <a href="/logout" class="btn btn-light btn-sm">
-          Logout
-        </a>
-      </header>
+        <h1 style="color:white;">Mi Cuenta </h1>
+        </header>
       <hr>
-      <div class="container">
+      
+     
+          <div class="row">
         <div class="col-sm-6">
-          <div class="card">
+            <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+              
             <div class="card-body">
-              <h3 class="card-title"><span class="fa fa-user"></span> Local</h3>
-              <p>
-                
-                <strong>email</strong> : <%= user.local.email %> <br>
-                <strong>password</strong> : <%= user.local.password %>
-              </p>
-
-              <label>Latitud: </label>
-              <input id="latitude" type="text" name="latitude"</input>
-              <p>
-             <label>Longitud: </label>
-             <input id="longitude" type="text" name="longitude"</input>
-             <p>
-              </div>
-              <button type="button" onclick="getPosition();">Get Lat & Long</button>
-              <button type="button" onclick="sendPosition();">Send</button>
-              <p>
-              <label id="result"></label>
-
-              <a href="/logout" class="btn btn-light btn-sm">
-                Logout
+              <h3 class="card-title"><span class="fa fa-user"></span> Datos de la Cuenta</h3>
+              <p> 
+              <strong>Nombre de usuario</strong> : <%= user.local.email %> <br>
+                <strong>Contraseña oculta</strong> : <%= user.local.password %>  </p>
+              <a href="/logout" class="btn btn-dark btn-sm">
+                Cerrar sesión
               </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+              
+            <div class="card-body">
+              <h3 class="card-title"><span class="fa fa-map-o"></span> Posición actual</h3>
+              <p> 
+                <label>Latitud  : </label>
+                <input id="latitude" type="text" name="latitude"</input>
+                <p>
+               <label>Longitud: </label>
+               <input id="longitude" type="text" name="longitude"</input>
+               <p>
+                </div>
+                <button type="button" onclick="getPosition();">Obtener Latitud y Longitud</button>
+                <button type="button" onclick="sendPosition();">Enviar  </button>
+                <p>
+                <label id="result"></label>
+              
+              <a href="/map" class="btn btn-dark btn-sm ">
+                Ir al mapa
+              </a>
+              
             </div>
           </div>
         </div>

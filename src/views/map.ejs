@@ -2,17 +2,14 @@
 <html>
   <body>
 
-    <p id="demo">Click the button to get your position.</p>
+    <p id="demo">Oprime para obtener tu posicion actual en el mapa</p>
 
-    <button onclick="getLocation()">Try It</button>
+    <button onclick="getLocation()">Intentalo</button>
 
     <div id="mapholder"></div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YAIzaSyAXwbVOFQ5JZYpJS_j9mQJiyjrFQeo3mgYcallback=myMap"></script>
-    <!--
-    To use this code on your website, get a free API key from Google.
-    Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
-  -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1HPnTgFtHHP0t1Vn3YWWrtn6uz7Hx7JI"></script>
+    
   <script>
   var x = document.getElementById("demo");
   function getLocation() {
@@ -28,8 +25,8 @@
       var lon = position.coords.longitude;
       var latlon = new google.maps.LatLng(lat, lon)
       var mapholder = document.getElementById('mapholder')
-      mapholder.style.height = '250px';
-      mapholder.style.width = '500px';
+      mapholder.style.height = '700px';
+      mapholder.style.width = '700px';
 
       var myOptions = {
         center:latlon,zoom:14,
